@@ -1,18 +1,54 @@
+*{
+	margin:0;
+	padding:0;
+}
 .container {
-	height:100vh;
-	width: 100vw;
-	display: grid;
-	grid-template-columns:20% auto 15% 10%;
-	grid-template-rows: 100px auto 200px;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    /*number of row and columns*/
+    grid-template-columns: 20% auto 15% 10%;
+    grid-template-rows: 100px auto 200px;
+    /*grid cell position*/
+}
+div.box{
+	display: flex;
+	justify-content: center; 
+	align-content: center;
 }
 
-.box {
-    
+.box1 {
+    background: #1abc9c;
+    /*this one takes column 1- 5 each is a horizaontal line */
+    grid-column-start:2;
+    grid-column-end:5;
 }
 
-.box1 { background:#1abc9c;}
-.box2 { background:#3498db;}
-.box3 { background:#9b59b6;}
-.box4 { background:#34495e;}
-.box5 { background:#f1c40f;}
-.box6 { background:#e67e22;}
+.box2 {
+    background: #3498db;
+    /*this one is for height */
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.box3 {
+    background: #9b59b6;
+}
+
+.box4 {
+    background: #34495e;
+    grid-column-start:3; 
+    grid-column-end:5;
+}
+
+.box5 {
+    background: #f1c40f;
+    grid-column-start: 1;
+    grid-column-end:3;
+}
+
+.box6 {
+    background: #e67e22;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
