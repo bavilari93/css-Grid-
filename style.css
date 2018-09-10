@@ -7,12 +7,19 @@
     width: 100vw;
     display: grid;
     /*number of row and columns*/
-    grid-template-columns: 20% auto 15% 10%;
-    grid-template-rows: 100px auto 200px;
-    /*grid cell position*/
+    grid-template-columns:[col-1] 20% [col-2]auto [col-3]15% [col-4] 10%;
+    grid-template-rows: [row-1-start]200px[row-1-end row-2-start] auto [row-2-end]100px;
+    /*grid template areas*/
+    grid-template-areas:
+    "header header header header "
+    "sidebar-1 content sidebar-r sidebar-r"
+    "footer footer footer footer"
+    "extra extra extra extra"
+    ;
 }
 div.box{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center; 
 	align-content: center;
 }
@@ -20,35 +27,40 @@ div.box{
 .box1 {
     background: #1abc9c;
     /*this one takes column 1- 5 each is a horizaontal line */
-    grid-column-start:2;
-    grid-column-end:5;
+ /*   grid-column-start:col-2;
+    grid-column-end:5;*/
+    /*we can also just mention the areas*/
+    grid-area: header;
 }
 
 .box2 {
     background: #3498db;
     /*this one is for height */
-    grid-row-start: 1;
-    grid-row-end: 3;
+    /*grid-row-start: 1;
+    grid-row-end: 3;*/
+    grid-area: sidebar-1;
 }
 
 .box3 {
     background: #9b59b6;
+    grid-area: content;
 }
 
 .box4 {
     background: #34495e;
-    grid-column-start:3; 
-    grid-column-end:5;
+    /*grid-column-start:3; 
+    grid-column-end:5;*/
+    grid-area: sidebar-r;
 }
 
 .box5 {
     background: #f1c40f;
-    grid-column-start: 1;
-    grid-column-end:3;
+    /*grid-column-start: 1;
+    grid-column-end:3;*/
+    grid-area: footer;
 }
 
 .box6 {
     background: #e67e22;
-    grid-column-start: 3;
-    grid-column-end: 5;
+   grid-area: extra;
 }
